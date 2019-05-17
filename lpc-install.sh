@@ -236,7 +236,7 @@ function detect_ubuntu() {
  elif [[ $(lsb_release -d) == *14.04* ]]; then
    UBUNTU_VERSION=14
 else
-   echo -e "${RED}You are not running Ubuntu 14.04, 16.04 or 18.04 Installation is cancelled.${NC}"
+   echo -e "${RED}You are not running Ubuntu 14.04, 16.04, 18.04 or 19.04 Installation is cancelled.${NC}"
    exit 1
 fi
 }
@@ -291,7 +291,7 @@ function setup_node() {
   update_config
   enable_firewall
   important_information
-  if (( $UBUNTU_VERSION == 16 || $UBUNTU_VERSION == 18 )); then
+  if (( $UBUNTU_VERSION == 16 || $UBUNTU_VERSION == 18 || $UBUNTU_VERSION == 19)); then
     configure_systemd
   else
     configure_startup
