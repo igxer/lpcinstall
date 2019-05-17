@@ -227,8 +227,10 @@ fi
 }
 
 function detect_ubuntu() {
- if [[ $(lsb_release -d) == *18.04* ]]; then
-   UBUNTU_VERSION=18
+ if [[ $(lsb_release -d) == *19.04* ]]; then
+   UBUNTU_VERSION=19
+   elif [[ $(lsb_release -d) == *16.04* ]]; then
+   UBUNTU_VERSION=16
  elif [[ $(lsb_release -d) == *16.04* ]]; then
    UBUNTU_VERSION=16
  elif [[ $(lsb_release -d) == *14.04* ]]; then
